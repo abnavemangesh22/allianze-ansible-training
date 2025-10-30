@@ -1,0 +1,25 @@
+---
+- name: Install and start the web server on remote machine #Play Name
+  hosts: all
+  tags: web
+  tasks:
+    - name: Install web server
+      yum: name=httpd state=present
+      tags:
+        - tag01
+
+    - name: Start the webserver
+      service: name=httpd state=started
+      tags:
+        - tag02
+
+- name: Install tree package on the remote machine  #Play Name
+  hosts: all
+  tags: db
+  tasks:
+    - name: Install tree package
+      yum: name=tree state=present
+      tags:
+        - tag03
+
+

@@ -1,0 +1,13 @@
+---
+- name: capture the output into the register variable
+  hosts: node01
+  tasks:
+    - name: running ifconfig command on remote machine
+      shell: "ifconfig ; hostname -i"
+      register: ip_addr
+    
+    - name: display the output of the command
+      debug:
+        msg: "{{ ip_addr.stdout_lines }}"
+
+    - debug:  var=ip_addr

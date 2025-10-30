@@ -1,0 +1,21 @@
+---
+- name: setting up the web-server
+  hosts: webservers
+  tasks:
+    - name: install the webserver
+      yum: name=httpd state=present
+
+    - name: enable and run firewall
+      service: name=firewalld state=started
+
+    - name: open the http port
+      firewalld: service=http state=enabled permanent=true immediate=yes
+
+    - name: enable web server
+      service: name=httpd enabled=true state=started
+
+    - name: default page
+      copy:
+        content: "Hello Ansible" 
+        dest: /var/www/html/index.html
+

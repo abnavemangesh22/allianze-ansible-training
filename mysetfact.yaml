@@ -1,0 +1,17 @@
+---
+- name: set the fact for a fun
+  hosts: node01
+  tasks:
+    - name: I waill cature the fact first
+      set_fact:
+        my_message: "Hello {{ inventory_hostname }}"
+    - name: please display the fact
+      debug:
+        msg: "{{ my_message  }}"
+
+- name: set the fact for a fun
+  hosts: node01
+  tasks:
+    - name: please display the fact from another play 
+      debug:
+        msg: "{{ my_message  }}"

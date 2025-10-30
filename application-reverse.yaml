@@ -1,0 +1,12 @@
+---
+- name: setting up the web-server
+  hosts: webservers
+  tasks:
+    - name: install the webserver
+      yum: name=httpd state=absent
+
+    - name: enable and run firewall
+      service: name=firewalld state=started
+
+    - name: open the http port
+      firewalld: service=http state=disabled permanent=true immediate=yes

@@ -1,0 +1,11 @@
+---
+- name: The task for using facts
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Collect the information about the managed node
+      setup:
+        
+    - name: show details about managed noded
+      debug:
+        msg: "{{ ansible_hostname }} {{ ansible_default_ipv4['address'] }} {{ ansible_distribution }}"

@@ -1,0 +1,8 @@
+---
+- name: demo for the debug module
+  hosts: all
+  tasks:
+    - name: Printing the message
+      debug:
+        msg: "Hello Ansible Welcome to the World of Automation"
+

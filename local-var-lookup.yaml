@@ -1,0 +1,9 @@
+---
+- name: Reading local machine env variables
+  hosts: localhost
+  vars: 
+     local_shell: "{{ lookup('file', './vars.yaml') }}"
+  tasks:
+    - name: display all the local varaiables
+      debug:
+        msg: "{{ local_shell }}" 

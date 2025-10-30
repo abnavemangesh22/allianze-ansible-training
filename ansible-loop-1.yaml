@@ -1,0 +1,15 @@
+---
+- name: installation of the multiple users
+  hosts: all
+  vars:
+    pkg:
+      - vsftpd
+      - tree
+      - httpd
+      - git
+      - nginx
+      - vim
+  tasks:
+    - name: installation for multiple packages
+      package: name="{{ item }}" state=absent
+      loop: "{{ pkg }}"

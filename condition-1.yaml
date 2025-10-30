@@ -1,0 +1,13 @@
+---
+- name: this is first ansible condition
+  hosts: all
+  vars:
+    age: 18
+  tasks:
+    - name: This is task number - 1
+      command: touch /tmp/myconditionistrue.txt
+      when: age == 18
+    - name: display my age
+      debug:
+        msg: "I am {{ age }} years old"
+

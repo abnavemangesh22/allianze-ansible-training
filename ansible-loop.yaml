@@ -1,0 +1,15 @@
+---
+- name: i am writing the loop for package installation
+  hosts: all
+  tasks:
+    - name: installation of softwares
+      package: name="{{ item }}" state=absent
+      with_items:
+         - vsftpd
+         - tree
+         - git
+         - httpd
+         - nginx
+         - vim
+
+

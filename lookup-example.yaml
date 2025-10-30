@@ -1,0 +1,11 @@
+---
+- name: copy the content of the file
+  hosts: all
+  vars:
+    contents: "{{ lookup('file', '/root/demo/array.yaml') }}"
+  tasks:
+    - name: show me content
+      debug:
+        msg: "{{ contents }}"
+    - name: copy the content to the destination
+      copy: dest=/tmp/myfile.yaml content="{{ contents }}"

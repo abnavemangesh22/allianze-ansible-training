@@ -1,0 +1,2 @@
+web_package: httpd-hostvar
+web_port: 80000

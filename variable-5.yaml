@@ -1,0 +1,15 @@
+---
+- name: demo for prompt-variable concept
+  hosts: node01
+  vars_prompt:
+    - name: user_name
+      prompt: "Enter your name"
+      private: false
+    - name: app_port
+      prompt: "Enter the application port number"
+      default: 8080
+      private: false
+  tasks:
+    - name: This is for testing above information
+      debug:
+        msg: "user {{ user_name }} is running on port number {{ app_port }}"

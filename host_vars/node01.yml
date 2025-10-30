@@ -1,0 +1,2 @@
+db_package: mariadb-server-hostvar
+db_port: 10000

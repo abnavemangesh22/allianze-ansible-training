@@ -1,0 +1,21 @@
+---
+- name: check var varible for parsing
+  hosts: node01
+    #vars:
+    #var_time : "{{ lookup('pipe', 'date \"+%H:%M:%S\"') }}"
+  tasks:
+    - name: setting up the fact for playbook
+      set_fact:
+        var_time : "{{ lookup('pipe', 'date \"+%H:%M:%S\"') }}"
+
+    - name: display this variable
+      debug:
+        msg: "{{ var_time  }}"
+   
+    - name: sleepfor while
+      command: "sleep 20"
+
+    - name: display this variable again
+      debug:
+        msg: "{{ var_time  }}"
+

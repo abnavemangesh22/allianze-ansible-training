@@ -1,0 +1,5 @@
+---
+- name: This is the task running from mydb.yaml file
+  debug:
+    msg: I am rruning from the mydb.yaml
+

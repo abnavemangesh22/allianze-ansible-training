@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: include dbfile into this tasks
+      include_tasks: db-mymain.yaml
+      when: "'dbservers' in group_names"
+
+    - name: inclde webfile into this tasks
+      include_tasks: web-mymain.yaml
+      when: "'webservers' in group_names"

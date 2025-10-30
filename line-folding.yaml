@@ -1,0 +1,30 @@
+---
+- name: User configuration for mysystem-1
+  hosts: dbservers
+  tasks:
+    - name: create and admin user
+      user: |
+        name=admin
+        state=present
+        uid=5002
+        group=root
+
+- name: User configuration for mysystem-2
+  hosts: webservers
+  tasks:
+    - name: create myuser on the server
+      user: >
+        name=admin
+        state=present
+        uid=5002
+        group=root
+
+- name: User configuration for mysystem-3
+  hosts: loadbalancers
+  tasks:
+    - name: create myuser on the lb
+      user:
+        name: admin
+        state: present
+        uid: 5002
+        group: root

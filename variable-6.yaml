@@ -1,0 +1,19 @@
+---
+- name: demo for prompt-variable concept
+  hosts: node01
+  vars_prompt:
+    - name: user_name
+      prompt: "Enter your name"
+      private: false
+    - name: password
+      prompt: "Enter the your password"
+      private: true
+      confirm: true
+      encrypt: sha512_crypt
+      unsafe: true
+      salt_size: 7
+  tasks:
+    - name: creating as user 
+      user:
+        name: "{{ user_name }}"
+        password: "{{ password }}"

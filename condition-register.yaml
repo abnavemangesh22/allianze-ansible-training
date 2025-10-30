@@ -1,0 +1,21 @@
+---
+- name: installation of the web server
+  hosts: all
+  tasks:
+    - name: installation of the web server called nginx
+      yum: name=nginx state=present
+      register: yum_output
+      ignore_errors: true
+    - name: show me the variable output
+      debug:
+        msg: "{{  yum_output  }}"
+    - name: This is last task
+      debug:
+        msg: "This package installation is done sucessfully"
+      when: yum_output.failed == false
+    - name: This is last task
+      debug:
+        msg: "This package installation is done not sucessfully there is an error"
+      when: yum_output.failed == true
+
+

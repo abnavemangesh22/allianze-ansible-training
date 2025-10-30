@@ -1,0 +1,10 @@
+---
+- name: this is demo for array
+  hosts: localhost
+  vars_files:
+    - array.yaml
+  tasks:
+    - name: simply print the name
+      debug:
+        #msg: "{{ users.bjohn.firstname }} "
+        msg: "{{ users['bjohn']['firstname']}}"

@@ -1,0 +1,10 @@
+- name: this is the task which is running synch
+  hosts: node01
+  tasks:
+
+    - name: run a command on all three machine again
+      command: "echo Hello Ansible > /tmp/ansible.txt"
+      async:5
+      poll: 1
+
+

@@ -1,0 +1,2 @@
+lb_package: haproxy-hostvar
+lb_port: 808000

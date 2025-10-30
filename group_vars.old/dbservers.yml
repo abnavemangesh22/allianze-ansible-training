@@ -1,0 +1,2 @@
+db_package: mariadb-server
+db_port: 3306

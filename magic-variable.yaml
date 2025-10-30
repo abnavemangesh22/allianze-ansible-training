@@ -1,0 +1,13 @@
+---
+- name: Built-in Variables Part-1
+  hosts: node01
+  tasks:
+    - name: show inventory hostname
+      debug:
+        msg: "{{ inventory_hostname  }}"
+    - name: show group name inside inventory
+      debug:
+        msg: "{{ groups }}"
+    - name: particular group information
+      debug: 
+        msg: "{{ groups['dbservers'] }}"

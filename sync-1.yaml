@@ -1,0 +1,33 @@
+---
+- name: this is the task which is running synch
+  hosts: all
+  tasks:
+    - name: run a command on all three machine
+      command: "dd if=/dev/zero of=your_filename bs=1M count=100"
+      async: 500
+      poll: 0
+      register: long_job
+
+    - debug:
+        msg: "{{ long_job }}"
+            
+    - name: run a command on all three machine again
+      command: "sleep 30"
+      async: 35
+      poll: 5
+      register: short_job
+
+    - debug:
+         msg: "{{ short_job }}"
+
+    - name: display the message on the screen
+      debug:
+        msg: "I am Finally finished running on all machine"
+
+    - name: check the job
+      async_status:
+        jid: "{{ long_job.ansible_job_id }}"
+      register: job_result
+      until: job_result.finished
+      retries: 10
+      delay: 10

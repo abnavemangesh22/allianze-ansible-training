@@ -1,0 +1,9 @@
+---
+- name: Installation of web server
+  hosts: all
+  tasks:
+    - name: install web as an apache server (apt)
+      package: name=apache2 state=present
+      when: ansible_distribution == "Ubuntu"
+    - name: install web as an httpd server (yum)
+      package: name=httpd state=present

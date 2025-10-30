@@ -1,0 +1,44 @@
+---
+- name: setting up the web-server play-1
+  hosts: webservers
+  vars_files:
+    - vars.yaml
+  tasks:
+    - name: install the "{{ myweb }}" webserver
+      yum: name={{ myweb }} state=present
+
+    - name: enable and run firewall called "{{ myfire }}"
+      service: name={{ myfire }} state=started
+
+    - name: open the http "{{ myport }}"
+      firewalld: service={{ myport }} state=enabled permanent=true immediate=yes
+
+    - name: enable web server "{{ myweb }}"
+      service: name={{ myweb }} enabled=true state=started
+
+    - name: default page
+      copy:
+        content: "Hello Ansible" 
+        dest: /var/www/html/index.html
+
+    - name: debug task
+      debug:
+        msg: I am using "{{ myweb }}" and it working on protocol "{{ myport }}"
+
+- name: setting up the web-server play-2
+  hosts: dbservers
+  vars:
+    myweb: apache2
+    myport: 8080
+  vars_files:
+    - vars.yaml
+  tasks: 
+     - name: debug task from play-2
+       debug:
+         msg: I am using "{{ myweb }}" and it working on protocol "{{ myport }}"
+
+
+
+
+
+

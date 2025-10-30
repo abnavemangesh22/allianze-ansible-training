@@ -1,0 +1,11 @@
+---
+- name: Demo for include_vars parameter
+  hosts: node01
+  tasks:
+    - name: load application variable from vars.yaml file
+      include_vars:
+        file: vars.yaml
+
+    - name: show me the variables
+      debug:
+        msg: my server is "{{ myweb }}" is running on "{{ myport }}" protocol and work with "{{ myfire }}"

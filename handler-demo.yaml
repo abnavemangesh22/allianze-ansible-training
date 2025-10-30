@@ -1,0 +1,13 @@
+---
+- name: This is the demo of handler
+  hosts: all
+  tasks: 
+    - name: I am going to trigger my handler
+      yum: name=httpd state=absent
+      notify: Change the content
+    - name: start the service
+      service: name=httpd state=started
+      ignore_errors: true
+  handlers:
+    - name: Change the content
+      copy: dest=/var/www/html/index.html content="This is content given by handlers"

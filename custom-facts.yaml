@@ -1,0 +1,7 @@
+---
+- name: I am accessing custom facts
+  hosts: node01
+  tasks:
+    - name: i am calling the custom facts from node01
+      debug:
+        msg: "{{ ansible_local.web.webdetails.web_port }}"

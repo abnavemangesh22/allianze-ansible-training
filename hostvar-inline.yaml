@@ -1,0 +1,11 @@
+- name: Inline variables demo
+  hosts: loadbalancers, node01
+  gather_facts: no
+
+  tasks:
+    - name: Display package and port info
+      debug:
+        #msg: "Host {{ inventory_hostname }} installs {{ vars.get('web_package') or vars.get('db_package') or vars.get('lb_package') }} on port {{ vars.get('web_port') or vars.get('db_port') or vars.get('lb_port') }}"
+        #msg: "Host {{ inventory_hostname }} installs {{ web_package | default(db_package, true) | default(lb_package, true) }} on port {{ web_port | default(db_port, true) | default(lb_port, true) }}"
+        msg: "Host {{ inventory_hostname }} installs {{ web_package | default(db_package | default(lb_package)) }} on port {{ web_port | default(db_port | default(lb_port)) }}"
+
