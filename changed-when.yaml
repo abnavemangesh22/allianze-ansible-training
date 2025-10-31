@@ -1,0 +1,16 @@
+---
+- name: demo for changed-when parameter usage
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: running the echo command on all machined
+      command: echo "Hello ansible world"
+      register: echo_output
+        #changed_when: false
+
+    - name: create the user
+      user: name=test group=root uid=3000
+      register: dir_output
+      changed_when: true
+     
+    

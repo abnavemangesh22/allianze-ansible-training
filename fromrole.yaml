@@ -1,0 +1,7 @@
+---
+- name: Install web-httpd
+  hosts: all
+  roles:
+    - role: web-role
+      vars:
+        package_state: present 

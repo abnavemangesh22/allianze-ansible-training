@@ -1,0 +1,19 @@
+---
+- name: installation of web sever
+  hosts: node01
+  tasks:
+    - name: This is package installation task
+      yum:
+        name: nginx9
+        state: present
+      register: yum_output
+      ignore_errors: true
+
+    - name: Show me what is there register value
+      debug:
+        msg: "{{ yum_output  }}"
+
+    - name: conditional stament
+      debug:
+        msg: "This package installation should be failed"
+      when: yum_output.failed == true

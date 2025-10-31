@@ -1,0 +1,15 @@
+---
+- name: ansible error handling
+  hosts: all
+  any_errors_fatal: true
+  tasks:
+    - name: files with error
+      command: touch /tmp/task/temp.txt
+
+    - name: File without errors
+      command: touch /tmp/error.txt
+
+    - name: I am handing the error
+      debug:
+        msg: This is error handling option
+

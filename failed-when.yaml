@@ -1,0 +1,21 @@
+---
+- name: Create you own condition for task failuer
+  hosts: node01
+  tasks:
+    - name: this is my task-1 for debug module checking
+      debug:
+        msg: This is just playbook testing scenario
+
+    - name: This is module for cat command
+      command: cat /tmp/myfile
+      register: command_output
+      failed_when: "'ERROR' in command_output.stdout"
+
+    - name: Just display the out
+      debug:
+        msg: "{{ command_output }}"
+
+    - name: this is tasks after error
+      debug:
+        msg: This is just playbook after error
+

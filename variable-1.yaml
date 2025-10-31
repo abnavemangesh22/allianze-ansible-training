@@ -1,6 +1,7 @@
 ---
 - name: setting up the web-server play-1
-  hosts: webservers
+  hosts: all
+  gather_facts: false
   vars:
     myweb: httpd
     myfire: firewalld
@@ -8,7 +9,10 @@
   tasks:
     - name: install the "{{ myweb }}" webserver
       yum: name={{ myweb }} state=present
-
+    
+    - name: install the "{{ myfire }}" firewall
+      yum: name={{ myfire }} state=present  
+        
     - name: enable and run firewall called "{{ myfire }}"
       service: name={{ myfire }} state=started
 
@@ -28,7 +32,7 @@
         msg: I am using "{{ myweb }}" and it working on protocol "{{ myport }}"
 
 - name: setting up the web-server play-2
-  hosts: dbservers
+  hosts: all
   vars:
     myweb: apache2
     myport: 8080
