@@ -1,0 +1,13 @@
+---
+- name: demo for max percentaged failed option
+  hosts: all
+  gather_facts: true
+  max_fail_percentage: 10
+  tasks:
+    - name: create a file on nodes
+      command: >
+        bash -c 'if [ "{{ inventory_hostname }}" = "node02"  ]; then exit 1; else touch /tmp/sucess.txt; fi'
+
+    - name: Run this if the thre shold is not exceeded
+      debug:
+        msg: "Lets play the role concept"

@@ -1,0 +1,12 @@
+---
+- name: This is the main playbook
+  hosts: all
+  ignore_unreachable: true
+  tasks:
+    - name: This is task-1
+      debug:
+        msg: "This is the printing tasks"
+    
+    - name:
+      command: "mkdir -p /tmp/mangesh/mangesh-alliance"
+

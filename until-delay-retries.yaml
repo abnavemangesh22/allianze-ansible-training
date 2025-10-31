@@ -1,0 +1,16 @@
+---
+- name: Demo for until and delay and  retries
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: try to read the file
+      command: cat /tmp/myfile.txt
+      register: result
+      ignore_errors: true
+      until: result.rc == 0
+      retries: 5
+      delay: 8
+    - name: show the final result
+      debug:
+        msg: "{{ result  }}"
+

@@ -1,0 +1,9 @@
+---
+- name: basic local action demo
+  hosts: webservers
+  tasks:
+    - name: run it locally
+      local_action: command hostname
+      register: local_output
+    - debug:
+        var: local_output

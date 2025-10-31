@@ -1,0 +1,14 @@
+---
+- name: delegate the task to localhost
+  hosts: all
+  tasks:
+    - name: show the target host
+      debug:
+        msg: "This is for my {{ inventory_hostname }}"
+    - name: run the command on controller
+      delegate_to: localhost
+      command: hostname
+      register: local_output
+    - name: display the output
+      debug:
+        msg: "{{ local_output }}"

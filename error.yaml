@@ -1,0 +1,25 @@
+---
+- name: Testing ignore error feature
+  hosts: all
+  tasks:
+    - block: 
+       - name: command for task-1
+         command: ls -l /tmp/mangesh1
+
+       - name: command for task-2
+         command: ls -l /tmp/mangesh2
+         register: task_2_ouput
+
+       - name: command for task-3
+         command: ls -l /tmp/mangesh3
+         register: task_3_ouput
+           #ignore_errors: yes
+
+      rescue:
+        - name: create the file then with rescure block
+          command: touch /tmp/mangesh2  
+
+      always:
+        - name: This is always block going to work
+          debug:
+            msg: "I will send you notification all the time" 

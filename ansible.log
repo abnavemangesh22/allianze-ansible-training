@@ -1,0 +1,674 @@
+2025-10-31 07:59:56,999 p=139027 u=root n=ansible | PLAY [Testing ignore error feature] ***************************************************************************************************
+2025-10-31 07:59:57,015 p=139027 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 08:00:15,953 p=139027 u=root n=ansible | ok: [node03]
+2025-10-31 08:00:16,143 p=139027 u=root n=ansible | ok: [node02]
+2025-10-31 08:00:16,300 p=139027 u=root n=ansible | ok: [node01]
+2025-10-31 08:00:16,354 p=139027 u=root n=ansible | TASK [command for task-1] *************************************************************************************************************
+2025-10-31 08:00:18,322 p=139027 u=root n=ansible | changed: [node02]
+2025-10-31 08:00:18,323 p=139027 u=root n=ansible | changed: [node01]
+2025-10-31 08:00:18,334 p=139027 u=root n=ansible | changed: [node03]
+2025-10-31 08:00:18,345 p=139027 u=root n=ansible | TASK [command for task-2] *************************************************************************************************************
+2025-10-31 08:00:19,871 p=139027 u=root n=ansible | changed: [node01]
+2025-10-31 08:00:19,954 p=139027 u=root n=ansible | changed: [node02]
+2025-10-31 08:00:20,103 p=139027 u=root n=ansible | changed: [node03]
+2025-10-31 08:00:20,116 p=139027 u=root n=ansible | TASK [command for task-3] *************************************************************************************************************
+2025-10-31 08:00:21,679 p=139027 u=root n=ansible | changed: [node01]
+2025-10-31 08:00:21,698 p=139027 u=root n=ansible | changed: [node02]
+2025-10-31 08:00:21,859 p=139027 u=root n=ansible | changed: [node03]
+2025-10-31 08:00:21,873 p=139027 u=root n=ansible | TASK [This is always block going to work] *********************************************************************************************
+2025-10-31 08:00:21,970 p=139027 u=root n=ansible | ok: [node01] => {
+    "msg": "I will send you notification all the time"
+}
+2025-10-31 08:00:21,974 p=139027 u=root n=ansible | ok: [node02] => {
+    "msg": "I will send you notification all the time"
+}
+2025-10-31 08:00:21,990 p=139027 u=root n=ansible | ok: [node03] => {
+    "msg": "I will send you notification all the time"
+}
+2025-10-31 08:00:22,099 p=139027 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 08:00:22,101 p=139027 u=root n=ansible | node01                     : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:00:22,103 p=139027 u=root n=ansible | node02                     : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:00:22,105 p=139027 u=root n=ansible | node03                     : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:00:52,563 p=139187 u=root n=ansible | ansible-playbook [core 2.15.13]
+  config file = /root/demo/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.9/site-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/local/bin/ansible-playbook
+  python version = 3.9.23 (main, Aug 19 2025, 00:00:00) [GCC 11.5.0 20240719 (Red Hat 11.5.0-11)] (/usr/bin/python3)
+  jinja version = 3.1.6
+  libyaml = True
+2025-10-31 08:00:52,564 p=139187 u=root n=ansible | Using /root/demo/ansible.cfg as config file
+2025-10-31 08:00:52,972 p=139187 u=root n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2025-10-31 08:00:52,973 p=139187 u=root n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2025-10-31 08:00:52,973 p=139187 u=root n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2025-10-31 08:00:52,973 p=139187 u=root n=ansible | PLAYBOOK: error.yaml ******************************************************************************************************************
+2025-10-31 08:00:52,973 p=139187 u=root n=ansible | 1 plays in error.yaml
+2025-10-31 08:00:52,976 p=139187 u=root n=ansible | PLAY [Testing ignore error feature] ***************************************************************************************************
+2025-10-31 08:00:52,992 p=139187 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 08:01:11,749 p=139187 u=root n=ansible | ok: [node03]
+2025-10-31 08:01:11,765 p=139187 u=root n=ansible | ok: [node02]
+2025-10-31 08:01:11,848 p=139187 u=root n=ansible | ok: [node01]
+2025-10-31 08:01:11,903 p=139187 u=root n=ansible | TASK [command for task-1] *************************************************************************************************************
+2025-10-31 08:01:13,885 p=139187 u=root n=ansible | changed: [node02] => {"changed": true, "cmd": ["ls", "-l", "/tmp/mangesh1"], "delta": "0:00:00.017673", "end": "2025-10-31 08:01:13.641566", "msg": "", "rc": 0, "start": "2025-10-31 08:01:13.623893", "stderr": "", "stderr_lines": [], "stdout": "-rw-r--r--. 1 root root 0 Oct 30 11:57 /tmp/mangesh1", "stdout_lines": ["-rw-r--r--. 1 root root 0 Oct 30 11:57 /tmp/mangesh1"]}
+2025-10-31 08:01:13,913 p=139187 u=root n=ansible | changed: [node01] => {"changed": true, "cmd": ["ls", "-l", "/tmp/mangesh1"], "delta": "0:00:00.016871", "end": "2025-10-31 08:01:13.671348", "msg": "", "rc": 0, "start": "2025-10-31 08:01:13.654477", "stderr": "", "stderr_lines": [], "stdout": "-rw-r--r--. 1 root root 0 Oct 30 11:50 /tmp/mangesh1", "stdout_lines": ["-rw-r--r--. 1 root root 0 Oct 30 11:50 /tmp/mangesh1"]}
+2025-10-31 08:01:13,918 p=139187 u=root n=ansible | changed: [node03] => {"changed": true, "cmd": ["ls", "-l", "/tmp/mangesh1"], "delta": "0:00:00.034653", "end": "2025-10-31 08:01:13.673817", "msg": "", "rc": 0, "start": "2025-10-31 08:01:13.639164", "stderr": "", "stderr_lines": [], "stdout": "total 0", "stdout_lines": ["total 0"]}
+2025-10-31 08:01:13,931 p=139187 u=root n=ansible | TASK [command for task-2] *************************************************************************************************************
+2025-10-31 08:01:15,586 p=139187 u=root n=ansible | changed: [node03] => {"changed": true, "cmd": ["ls", "-l", "/tmp/mangesh2"], "delta": "0:00:00.016798", "end": "2025-10-31 08:01:15.336475", "msg": "", "rc": 0, "start": "2025-10-31 08:01:15.319677", "stderr": "", "stderr_lines": [], "stdout": "-rw-r--r--. 1 root root 0 Oct 31 07:57 /tmp/mangesh2", "stdout_lines": ["-rw-r--r--. 1 root root 0 Oct 31 07:57 /tmp/mangesh2"]}
+2025-10-31 08:01:15,593 p=139187 u=root n=ansible | changed: [node02] => {"changed": true, "cmd": ["ls", "-l", "/tmp/mangesh2"], "delta": "0:00:00.016756", "end": "2025-10-31 08:01:15.362872", "msg": "", "rc": 0, "start": "2025-10-31 08:01:15.346116", "stderr": "", "stderr_lines": [], "stdout": "-rw-r--r--. 1 root root 0 Oct 31 07:51 /tmp/mangesh2", "stdout_lines": ["-rw-r--r--. 1 root root 0 Oct 31 07:51 /tmp/mangesh2"]}
+2025-10-31 08:01:16,612 p=139187 u=root n=ansible | changed: [node01] => {"changed": true, "cmd": ["ls", "-l", "/tmp/mangesh2"], "delta": "0:00:01.018844", "end": "2025-10-31 08:01:16.354652", "msg": "", "rc": 0, "start": "2025-10-31 08:01:15.335808", "stderr": "", "stderr_lines": [], "stdout": "-rw-r--r--. 1 root root 0 Oct 30 12:17 /tmp/mangesh2", "stdout_lines": ["-rw-r--r--. 1 root root 0 Oct 30 12:17 /tmp/mangesh2"]}
+2025-10-31 08:01:16,625 p=139187 u=root n=ansible | TASK [command for task-3] *************************************************************************************************************
+2025-10-31 08:01:18,276 p=139187 u=root n=ansible | changed: [node01] => {"changed": true, "cmd": ["ls", "-l", "/tmp/mangesh3"], "delta": "0:00:00.018333", "end": "2025-10-31 08:01:17.975252", "msg": "", "rc": 0, "start": "2025-10-31 08:01:17.956919", "stderr": "", "stderr_lines": [], "stdout": "-rw-r--r--. 1 root root 0 Oct 30 11:53 /tmp/mangesh3", "stdout_lines": ["-rw-r--r--. 1 root root 0 Oct 30 11:53 /tmp/mangesh3"]}
+2025-10-31 08:01:18,299 p=139187 u=root n=ansible | changed: [node02] => {"changed": true, "cmd": ["ls", "-l", "/tmp/mangesh3"], "delta": "0:00:00.023601", "end": "2025-10-31 08:01:18.043892", "msg": "", "rc": 0, "start": "2025-10-31 08:01:18.020291", "stderr": "", "stderr_lines": [], "stdout": "-rw-r--r--. 1 root root 0 Oct 30 11:53 /tmp/mangesh3", "stdout_lines": ["-rw-r--r--. 1 root root 0 Oct 30 11:53 /tmp/mangesh3"]}
+2025-10-31 08:01:18,306 p=139187 u=root n=ansible | changed: [node03] => {"changed": true, "cmd": ["ls", "-l", "/tmp/mangesh3"], "delta": "0:00:00.020441", "end": "2025-10-31 08:01:18.021713", "msg": "", "rc": 0, "start": "2025-10-31 08:01:18.001272", "stderr": "", "stderr_lines": [], "stdout": "-rw-r--r--. 1 ansible ansible 0 Oct 30 11:53 /tmp/mangesh3", "stdout_lines": ["-rw-r--r--. 1 ansible ansible 0 Oct 30 11:53 /tmp/mangesh3"]}
+2025-10-31 08:01:18,322 p=139187 u=root n=ansible | TASK [This is always block going to work] *********************************************************************************************
+2025-10-31 08:01:18,420 p=139187 u=root n=ansible | ok: [node01] => {
+    "msg": "I will send you notification all the time"
+}
+2025-10-31 08:01:18,435 p=139187 u=root n=ansible | ok: [node02] => {
+    "msg": "I will send you notification all the time"
+}
+2025-10-31 08:01:18,459 p=139187 u=root n=ansible | ok: [node03] => {
+    "msg": "I will send you notification all the time"
+}
+2025-10-31 08:01:18,579 p=139187 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 08:01:18,579 p=139187 u=root n=ansible | node01                     : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:01:18,580 p=139187 u=root n=ansible | node02                     : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:01:18,580 p=139187 u=root n=ansible | node03                     : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:20:57,648 p=139370 u=root n=ansible | PLAY [Demo for free strategy] *********************************************************************************************************
+2025-10-31 08:21:16,726 p=139370 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 08:21:16,729 p=139370 u=root n=ansible | ok: [node01]
+2025-10-31 08:21:16,764 p=139370 u=root n=ansible | ok: [node03]
+2025-10-31 08:21:16,968 p=139370 u=root n=ansible | ok: [node02]
+2025-10-31 08:21:33,681 p=139370 u=root n=ansible | TASK [this is task-1 simulate slow task] **********************************************************************************************
+2025-10-31 08:21:33,683 p=139370 u=root n=ansible | changed: [node01]
+2025-10-31 08:21:33,684 p=139370 u=root n=ansible | changed: [node03]
+2025-10-31 08:21:33,755 p=139370 u=root n=ansible | changed: [node02]
+2025-10-31 08:21:40,282 p=139370 u=root n=ansible | TASK [this is task-2 simulate the faster task] ****************************************************************************************
+2025-10-31 08:21:40,283 p=139370 u=root n=ansible | changed: [node01]
+2025-10-31 08:21:40,353 p=139370 u=root n=ansible | changed: [node02]
+2025-10-31 08:21:40,384 p=139370 u=root n=ansible | changed: [node03]
+2025-10-31 08:21:40,386 p=139370 u=root n=ansible | TASK [this is task-3 will just printing] **********************************************************************************************
+2025-10-31 08:21:40,387 p=139370 u=root n=ansible | ok: [node01] => {
+    "msg": "hurray I am working on free strategy"
+}
+2025-10-31 08:21:40,442 p=139370 u=root n=ansible | ok: [node02] => {
+    "msg": "hurray I am working on free strategy"
+}
+2025-10-31 08:21:40,513 p=139370 u=root n=ansible | ok: [node03] => {
+    "msg": "hurray I am working on free strategy"
+}
+2025-10-31 08:21:40,590 p=139370 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 08:21:40,590 p=139370 u=root n=ansible | node01                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:21:40,591 p=139370 u=root n=ansible | node02                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:21:40,591 p=139370 u=root n=ansible | node03                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:21:55,077 p=139477 u=root n=ansible | PLAY [Demo for free strategy] *********************************************************************************************************
+2025-10-31 08:22:13,830 p=139477 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 08:22:13,832 p=139477 u=root n=ansible | ok: [node02]
+2025-10-31 08:22:13,897 p=139477 u=root n=ansible | ok: [node03]
+2025-10-31 08:22:13,978 p=139477 u=root n=ansible | ok: [node01]
+2025-10-31 08:22:40,382 p=139477 u=root n=ansible | TASK [this is task-1 simulate slow task] **********************************************************************************************
+2025-10-31 08:22:40,385 p=139477 u=root n=ansible | changed: [node03]
+2025-10-31 08:22:40,413 p=139477 u=root n=ansible | changed: [node01]
+2025-10-31 08:22:40,415 p=139477 u=root n=ansible | changed: [node02]
+2025-10-31 08:22:47,000 p=139477 u=root n=ansible | TASK [this is task-2 simulate the faster task] ****************************************************************************************
+2025-10-31 08:22:47,001 p=139477 u=root n=ansible | changed: [node01]
+2025-10-31 08:22:47,001 p=139477 u=root n=ansible | changed: [node03]
+2025-10-31 08:22:47,085 p=139477 u=root n=ansible | changed: [node02]
+2025-10-31 08:22:47,087 p=139477 u=root n=ansible | TASK [this is task-3 will just printing] **********************************************************************************************
+2025-10-31 08:22:47,090 p=139477 u=root n=ansible | ok: [node01] => {
+    "msg": "hurray I am working on free strategy"
+}
+2025-10-31 08:22:47,143 p=139477 u=root n=ansible | ok: [node03] => {
+    "msg": "hurray I am working on free strategy"
+}
+2025-10-31 08:22:47,190 p=139477 u=root n=ansible | ok: [node02] => {
+    "msg": "hurray I am working on free strategy"
+}
+2025-10-31 08:22:47,243 p=139477 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 08:22:47,243 p=139477 u=root n=ansible | node01                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:22:47,243 p=139477 u=root n=ansible | node02                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:22:47,244 p=139477 u=root n=ansible | node03                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:34:52,246 p=139593 u=root n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/root/demo/until-delay-retries.yaml': line 13, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      delay: 3
+   - name: show the final result
+   ^ here
+
+2025-10-31 08:36:17,373 p=139609 u=root n=ansible | PLAY [Demo for until and delay and  retries] ******************************************************************************************
+2025-10-31 08:36:17,423 p=139609 u=root n=ansible | TASK [try to read the file] ***********************************************************************************************************
+2025-10-31 08:36:43,137 p=139609 u=root n=ansible | fatal: [node03]: FAILED! => {"attempts": 5, "changed": true, "cmd": ["cat", "/myfile.txt"], "delta": "0:00:00.009838", "end": "2025-10-31 08:36:42.899802", "msg": "non-zero return code", "rc": 1, "start": "2025-10-31 08:36:42.889964", "stderr": "cat: /myfile.txt: No such file or directory", "stderr_lines": ["cat: /myfile.txt: No such file or directory"], "stdout": "", "stdout_lines": []}
+2025-10-31 08:36:43,139 p=139609 u=root n=ansible | ...ignoring
+2025-10-31 08:36:43,612 p=139609 u=root n=ansible | fatal: [node01]: FAILED! => {"attempts": 5, "changed": true, "cmd": ["cat", "/myfile.txt"], "delta": "0:00:00.017222", "end": "2025-10-31 08:36:43.350119", "msg": "non-zero return code", "rc": 1, "start": "2025-10-31 08:36:43.332897", "stderr": "cat: /myfile.txt: No such file or directory", "stderr_lines": ["cat: /myfile.txt: No such file or directory"], "stdout": "", "stdout_lines": []}
+2025-10-31 08:36:43,612 p=139609 u=root n=ansible | ...ignoring
+2025-10-31 08:36:44,313 p=139609 u=root n=ansible | fatal: [node02]: FAILED! => {"attempts": 5, "changed": true, "cmd": ["cat", "/myfile.txt"], "delta": "0:00:00.018697", "end": "2025-10-31 08:36:44.046302", "msg": "non-zero return code", "rc": 1, "start": "2025-10-31 08:36:44.027605", "stderr": "cat: /myfile.txt: No such file or directory", "stderr_lines": ["cat: /myfile.txt: No such file or directory"], "stdout": "", "stdout_lines": []}
+2025-10-31 08:36:44,313 p=139609 u=root n=ansible | ...ignoring
+2025-10-31 08:36:44,323 p=139609 u=root n=ansible | TASK [show the final result] **********************************************************************************************************
+2025-10-31 08:36:44,413 p=139609 u=root n=ansible | ok: [node01] => {
+    "msg": {
+        "attempts": 5,
+        "changed": true,
+        "cmd": [
+            "cat",
+            "/myfile.txt"
+        ],
+        "delta": "0:00:00.017222",
+        "end": "2025-10-31 08:36:43.350119",
+        "failed": true,
+        "msg": "non-zero return code",
+        "rc": 1,
+        "start": "2025-10-31 08:36:43.332897",
+        "stderr": "cat: /myfile.txt: No such file or directory",
+        "stderr_lines": [
+            "cat: /myfile.txt: No such file or directory"
+        ],
+        "stdout": "",
+        "stdout_lines": []
+    }
+}
+2025-10-31 08:36:44,440 p=139609 u=root n=ansible | ok: [node02] => {
+    "msg": {
+        "attempts": 5,
+        "changed": true,
+        "cmd": [
+            "cat",
+            "/myfile.txt"
+        ],
+        "delta": "0:00:00.018697",
+        "end": "2025-10-31 08:36:44.046302",
+        "failed": true,
+        "msg": "non-zero return code",
+        "rc": 1,
+        "start": "2025-10-31 08:36:44.027605",
+        "stderr": "cat: /myfile.txt: No such file or directory",
+        "stderr_lines": [
+            "cat: /myfile.txt: No such file or directory"
+        ],
+        "stdout": "",
+        "stdout_lines": []
+    }
+}
+2025-10-31 08:36:44,519 p=139609 u=root n=ansible | ok: [node03] => {
+    "msg": {
+        "attempts": 5,
+        "changed": true,
+        "cmd": [
+            "cat",
+            "/myfile.txt"
+        ],
+        "delta": "0:00:00.009838",
+        "end": "2025-10-31 08:36:42.899802",
+        "failed": true,
+        "msg": "non-zero return code",
+        "rc": 1,
+        "start": "2025-10-31 08:36:42.889964",
+        "stderr": "cat: /myfile.txt: No such file or directory",
+        "stderr_lines": [
+            "cat: /myfile.txt: No such file or directory"
+        ],
+        "stdout": "",
+        "stdout_lines": []
+    }
+}
+2025-10-31 08:36:44,586 p=139609 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 08:36:44,587 p=139609 u=root n=ansible | node01                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2025-10-31 08:36:44,587 p=139609 u=root n=ansible | node02                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2025-10-31 08:36:44,587 p=139609 u=root n=ansible | node03                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2025-10-31 08:38:43,672 p=139771 u=root n=ansible | PLAY [Demo for until and delay and  retries] ******************************************************************************************
+2025-10-31 08:38:43,730 p=139771 u=root n=ansible | TASK [try to read the file] ***********************************************************************************************************
+2025-10-31 08:38:46,627 p=139771 u=root n=ansible | changed: [node02]
+2025-10-31 08:39:34,407 p=139771 u=root n=ansible | fatal: [node03]: FAILED! => {"attempts": 5, "changed": true, "cmd": ["cat", "/tmp/myfile.txt"], "delta": "0:00:00.010802", "end": "2025-10-31 08:39:34.132929", "msg": "non-zero return code", "rc": 1, "start": "2025-10-31 08:39:34.122127", "stderr": "cat: /tmp/myfile.txt: No such file or directory", "stderr_lines": ["cat: /tmp/myfile.txt: No such file or directory"], "stdout": "", "stdout_lines": []}
+2025-10-31 08:39:34,408 p=139771 u=root n=ansible | ...ignoring
+2025-10-31 08:39:35,718 p=139771 u=root n=ansible | fatal: [node01]: FAILED! => {"attempts": 5, "changed": true, "cmd": ["cat", "/tmp/myfile.txt"], "delta": "0:00:00.012251", "end": "2025-10-31 08:39:35.450187", "msg": "non-zero return code", "rc": 1, "start": "2025-10-31 08:39:35.437936", "stderr": "cat: /tmp/myfile.txt: No such file or directory", "stderr_lines": ["cat: /tmp/myfile.txt: No such file or directory"], "stdout": "", "stdout_lines": []}
+2025-10-31 08:39:35,719 p=139771 u=root n=ansible | ...ignoring
+2025-10-31 08:39:35,729 p=139771 u=root n=ansible | TASK [show the final result] **********************************************************************************************************
+2025-10-31 08:39:35,810 p=139771 u=root n=ansible | ok: [node01] => {
+    "msg": {
+        "attempts": 5,
+        "changed": true,
+        "cmd": [
+            "cat",
+            "/tmp/myfile.txt"
+        ],
+        "delta": "0:00:00.012251",
+        "end": "2025-10-31 08:39:35.450187",
+        "failed": true,
+        "msg": "non-zero return code",
+        "rc": 1,
+        "start": "2025-10-31 08:39:35.437936",
+        "stderr": "cat: /tmp/myfile.txt: No such file or directory",
+        "stderr_lines": [
+            "cat: /tmp/myfile.txt: No such file or directory"
+        ],
+        "stdout": "",
+        "stdout_lines": []
+    }
+}
+2025-10-31 08:39:35,843 p=139771 u=root n=ansible | ok: [node02] => {
+    "msg": {
+        "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python3"
+        },
+        "attempts": 1,
+        "changed": true,
+        "cmd": [
+            "cat",
+            "/tmp/myfile.txt"
+        ],
+        "delta": "0:00:00.012881",
+        "end": "2025-10-31 08:38:46.301619",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 08:38:46.288738",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "",
+        "stdout_lines": []
+    }
+}
+2025-10-31 08:39:35,860 p=139771 u=root n=ansible | ok: [node03] => {
+    "msg": {
+        "attempts": 5,
+        "changed": true,
+        "cmd": [
+            "cat",
+            "/tmp/myfile.txt"
+        ],
+        "delta": "0:00:00.010802",
+        "end": "2025-10-31 08:39:34.132929",
+        "failed": true,
+        "msg": "non-zero return code",
+        "rc": 1,
+        "start": "2025-10-31 08:39:34.122127",
+        "stderr": "cat: /tmp/myfile.txt: No such file or directory",
+        "stderr_lines": [
+            "cat: /tmp/myfile.txt: No such file or directory"
+        ],
+        "stdout": "",
+        "stdout_lines": []
+    }
+}
+2025-10-31 08:39:35,940 p=139771 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 08:39:35,942 p=139771 u=root n=ansible | node01                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2025-10-31 08:39:35,943 p=139771 u=root n=ansible | node02                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:39:35,944 p=139771 u=root n=ansible | node03                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2025-10-31 08:48:22,304 p=139926 u=root n=ansible | PLAY [delegate the task to localhost] *************************************************************************************************
+2025-10-31 08:48:22,320 p=139926 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 08:48:42,029 p=139926 u=root n=ansible | ok: [node02]
+2025-10-31 08:48:42,058 p=139926 u=root n=ansible | TASK [show the target host] ***********************************************************************************************************
+2025-10-31 08:48:42,122 p=139926 u=root n=ansible | ok: [node02] => {
+    "msg": "This is for my node02"
+}
+2025-10-31 08:48:42,136 p=139926 u=root n=ansible | TASK [run the command on controller] **************************************************************************************************
+2025-10-31 08:48:42,799 p=139926 u=root n=ansible | changed: [node02 -> localhost]
+2025-10-31 08:48:42,812 p=139926 u=root n=ansible | TASK [display the output] *************************************************************************************************************
+2025-10-31 08:48:42,866 p=139926 u=root n=ansible | ok: [node02] => {
+    "msg": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.010242",
+        "end": "2025-10-31 08:48:42.725407",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 08:48:42.715165",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "master",
+        "stdout_lines": [
+            "master"
+        ]
+    }
+}
+2025-10-31 08:48:42,908 p=139926 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 08:48:42,908 p=139926 u=root n=ansible | node02                     : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:50:20,004 p=139981 u=root n=ansible | PLAY [delegate the task to localhost] *************************************************************************************************
+2025-10-31 08:50:20,020 p=139981 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 08:50:39,442 p=139981 u=root n=ansible | ok: [node02]
+2025-10-31 08:50:39,470 p=139981 u=root n=ansible | TASK [show the target host] ***********************************************************************************************************
+2025-10-31 08:50:39,545 p=139981 u=root n=ansible | ok: [node02] => {
+    "msg": "This is for my node02"
+}
+2025-10-31 08:50:39,560 p=139981 u=root n=ansible | TASK [run the command on controller] **************************************************************************************************
+2025-10-31 08:50:40,304 p=139981 u=root n=ansible | changed: [node02 -> localhost]
+2025-10-31 08:50:40,317 p=139981 u=root n=ansible | TASK [display the output] *************************************************************************************************************
+2025-10-31 08:50:40,370 p=139981 u=root n=ansible | ok: [node02] => {
+    "msg": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.010218",
+        "end": "2025-10-31 08:50:40.218422",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 08:50:40.208204",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "master",
+        "stdout_lines": [
+            "master"
+        ]
+    }
+}
+2025-10-31 08:50:40,422 p=139981 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 08:50:40,422 p=139981 u=root n=ansible | node02                     : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:51:57,553 p=140023 u=root n=ansible | PLAY [delegate the task to localhost] *************************************************************************************************
+2025-10-31 08:51:57,578 p=140023 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 08:52:16,656 p=140023 u=root n=ansible | ok: [node02]
+2025-10-31 08:52:16,681 p=140023 u=root n=ansible | ok: [node03]
+2025-10-31 08:52:16,780 p=140023 u=root n=ansible | ok: [node01]
+2025-10-31 08:52:16,837 p=140023 u=root n=ansible | TASK [show the target host] ***********************************************************************************************************
+2025-10-31 08:52:16,916 p=140023 u=root n=ansible | ok: [node01] => {
+    "msg": "This is for my node01"
+}
+2025-10-31 08:52:16,934 p=140023 u=root n=ansible | ok: [node02] => {
+    "msg": "This is for my node02"
+}
+2025-10-31 08:52:16,966 p=140023 u=root n=ansible | ok: [node03] => {
+    "msg": "This is for my node03"
+}
+2025-10-31 08:52:16,982 p=140023 u=root n=ansible | TASK [run the command on controller] **************************************************************************************************
+2025-10-31 08:52:17,894 p=140023 u=root n=ansible | changed: [node03 -> localhost]
+2025-10-31 08:52:17,969 p=140023 u=root n=ansible | changed: [node01 -> localhost]
+2025-10-31 08:52:18,010 p=140023 u=root n=ansible | changed: [node02 -> localhost]
+2025-10-31 08:52:18,022 p=140023 u=root n=ansible | TASK [display the output] *************************************************************************************************************
+2025-10-31 08:52:18,126 p=140023 u=root n=ansible | ok: [node01] => {
+    "msg": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.013520",
+        "end": "2025-10-31 08:52:17.848724",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 08:52:17.835204",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "master",
+        "stdout_lines": [
+            "master"
+        ]
+    }
+}
+2025-10-31 08:52:18,131 p=140023 u=root n=ansible | ok: [node02] => {
+    "msg": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.017121",
+        "end": "2025-10-31 08:52:17.921429",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 08:52:17.904308",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "master",
+        "stdout_lines": [
+            "master"
+        ]
+    }
+}
+2025-10-31 08:52:18,170 p=140023 u=root n=ansible | ok: [node03] => {
+    "msg": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.025119",
+        "end": "2025-10-31 08:52:17.742343",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 08:52:17.717224",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "master",
+        "stdout_lines": [
+            "master"
+        ]
+    }
+}
+2025-10-31 08:52:18,286 p=140023 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 08:52:18,287 p=140023 u=root n=ansible | node01                     : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:52:18,287 p=140023 u=root n=ansible | node02                     : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 08:52:18,287 p=140023 u=root n=ansible | node03                     : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 09:00:22,834 p=140156 u=root n=ansible | PLAY [this is the delegation demo] ****************************************************************************************************
+2025-10-31 09:00:22,850 p=140156 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 09:00:41,962 p=140156 u=root n=ansible | ok: [node02]
+2025-10-31 09:00:42,075 p=140156 u=root n=ansible | ok: [node03]
+2025-10-31 09:00:43,064 p=140156 u=root n=ansible | ok: [node01]
+2025-10-31 09:00:43,128 p=140156 u=root n=ansible | TASK [delegate to the webserver-1] ****************************************************************************************************
+2025-10-31 09:00:45,678 p=140156 u=root n=ansible | changed: [node02 -> node01]
+2025-10-31 09:00:45,805 p=140156 u=root n=ansible | changed: [node01]
+2025-10-31 09:00:45,816 p=140156 u=root n=ansible | changed: [node03 -> node01]
+2025-10-31 09:00:45,829 p=140156 u=root n=ansible | TASK [display] ************************************************************************************************************************
+2025-10-31 09:00:45,919 p=140156 u=root n=ansible | ok: [node02] => {
+    "web_output": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.020995",
+        "end": "2025-10-31 09:00:45.341224",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 09:00:45.320229",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "node01",
+        "stdout_lines": [
+            "node01"
+        ]
+    }
+}
+2025-10-31 09:00:45,924 p=140156 u=root n=ansible | ok: [node01] => {
+    "web_output": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.027635",
+        "end": "2025-10-31 09:00:45.417129",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 09:00:45.389494",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "node01",
+        "stdout_lines": [
+            "node01"
+        ]
+    }
+}
+2025-10-31 09:00:45,967 p=140156 u=root n=ansible | ok: [node03] => {
+    "web_output": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.008176",
+        "end": "2025-10-31 09:00:45.525340",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 09:00:45.517164",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "node01",
+        "stdout_lines": [
+            "node01"
+        ]
+    }
+}
+2025-10-31 09:00:46,083 p=140156 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 09:00:46,085 p=140156 u=root n=ansible | node01                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 09:00:46,086 p=140156 u=root n=ansible | node02                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 09:00:46,087 p=140156 u=root n=ansible | node03                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 09:01:36,392 p=140248 u=root n=ansible | PLAY [this is the delegation demo] ****************************************************************************************************
+2025-10-31 09:01:36,418 p=140248 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 09:01:55,060 p=140248 u=root n=ansible | ok: [node02]
+2025-10-31 09:01:55,103 p=140248 u=root n=ansible | ok: [node01]
+2025-10-31 09:01:55,108 p=140248 u=root n=ansible | ok: [node03]
+2025-10-31 09:01:55,163 p=140248 u=root n=ansible | TASK [delegate to the webserver-1] ****************************************************************************************************
+2025-10-31 09:01:57,764 p=140248 u=root n=ansible | changed: [node01 -> node03]
+2025-10-31 09:01:57,917 p=140248 u=root n=ansible | changed: [node03]
+2025-10-31 09:01:57,920 p=140248 u=root n=ansible | changed: [node02 -> node03]
+2025-10-31 09:01:57,941 p=140248 u=root n=ansible | TASK [display] ************************************************************************************************************************
+2025-10-31 09:01:58,028 p=140248 u=root n=ansible | ok: [node02] => {
+    "web_output": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.007908",
+        "end": "2025-10-31 09:01:57.550597",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 09:01:57.542689",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "node03",
+        "stdout_lines": [
+            "node03"
+        ]
+    }
+}
+2025-10-31 09:01:58,035 p=140248 u=root n=ansible | ok: [node01] => {
+    "web_output": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.020342",
+        "end": "2025-10-31 09:01:57.431671",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 09:01:57.411329",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "node03",
+        "stdout_lines": [
+            "node03"
+        ]
+    }
+}
+2025-10-31 09:01:58,068 p=140248 u=root n=ansible | ok: [node03] => {
+    "web_output": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.028183",
+        "end": "2025-10-31 09:01:57.431381",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 09:01:57.403198",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "node03",
+        "stdout_lines": [
+            "node03"
+        ]
+    }
+}
+2025-10-31 09:01:58,186 p=140248 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 09:01:58,186 p=140248 u=root n=ansible | node01                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 09:01:58,186 p=140248 u=root n=ansible | node02                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 09:01:58,186 p=140248 u=root n=ansible | node03                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 09:04:36,188 p=140329 u=root n=ansible | PLAY [basic local action demo] ********************************************************************************************************
+2025-10-31 09:04:36,205 p=140329 u=root n=ansible | TASK [Gathering Facts] ****************************************************************************************************************
+2025-10-31 09:04:55,406 p=140329 u=root n=ansible | ok: [node02]
+2025-10-31 09:04:55,413 p=140329 u=root n=ansible | ok: [node03]
+2025-10-31 09:04:55,625 p=140329 u=root n=ansible | ok: [node01]
+2025-10-31 09:04:55,681 p=140329 u=root n=ansible | TASK [run it locally] *****************************************************************************************************************
+2025-10-31 09:04:56,568 p=140329 u=root n=ansible | changed: [node01 -> localhost]
+2025-10-31 09:04:56,599 p=140329 u=root n=ansible | changed: [node03 -> localhost]
+2025-10-31 09:04:56,689 p=140329 u=root n=ansible | changed: [node02 -> localhost]
+2025-10-31 09:04:56,701 p=140329 u=root n=ansible | TASK [debug] **************************************************************************************************************************
+2025-10-31 09:04:56,798 p=140329 u=root n=ansible | ok: [node02] => {
+    "local_output": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.009844",
+        "end": "2025-10-31 09:04:56.592531",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 09:04:56.582687",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "master",
+        "stdout_lines": [
+            "master"
+        ]
+    }
+}
+2025-10-31 09:04:56,820 p=140329 u=root n=ansible | ok: [node01] => {
+    "local_output": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.020286",
+        "end": "2025-10-31 09:04:56.429430",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 09:04:56.409144",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "master",
+        "stdout_lines": [
+            "master"
+        ]
+    }
+}
+2025-10-31 09:04:56,859 p=140329 u=root n=ansible | ok: [node03] => {
+    "local_output": {
+        "changed": true,
+        "cmd": [
+            "hostname"
+        ],
+        "delta": "0:00:00.011047",
+        "end": "2025-10-31 09:04:56.504562",
+        "failed": false,
+        "msg": "",
+        "rc": 0,
+        "start": "2025-10-31 09:04:56.493515",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": "master",
+        "stdout_lines": [
+            "master"
+        ]
+    }
+}
+2025-10-31 09:04:56,971 p=140329 u=root n=ansible | PLAY RECAP ****************************************************************************************************************************
+2025-10-31 09:04:56,973 p=140329 u=root n=ansible | node01                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 09:04:56,973 p=140329 u=root n=ansible | node02                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-31 09:04:56,974 p=140329 u=root n=ansible | node03                     : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

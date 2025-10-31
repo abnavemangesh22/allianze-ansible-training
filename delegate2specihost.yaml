@@ -1,0 +1,12 @@
+---
+- name: this is the delegation demo
+  hosts: webservers
+  tasks:
+    - name: delegate to the webserver-1
+      delegate_to: "{{ groups['webservers'][2] }}"
+      command: hostname
+      register: web_output
+
+    - name: display
+      debug:
+        var: web_output
